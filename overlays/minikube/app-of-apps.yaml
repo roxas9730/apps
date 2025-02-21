@@ -16,8 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  sources:
-    - path: apps/overlays/minikube/prometheus.yaml
-    - path: apps/overlays/minikube/grafana.yaml
-    - path: apps/overlays/minikube/efk.yaml
-
