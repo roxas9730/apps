@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/roxas9730/apps.git'  # Cambia por tu repo
     targetRevision: HEAD
-    path: monitoring/grafana  # Ruta donde está la configuración de Grafana
+    path:  apps/base/monitoring/grafana  # Ruta donde está la configuración de Grafana
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring

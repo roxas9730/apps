@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: efk
+  name: prometheus
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/roxas9730/apps.git'  # Cambia por tu repo
     targetRevision: HEAD
-    path: logging/efk  # Ruta donde está la configuración de EFK
+    path:  apps/base/monitoring/prometheus  # Ruta donde está la configuración de Prometheus
   destination:
     server: https://kubernetes.default.svc
-    namespace: logging
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
