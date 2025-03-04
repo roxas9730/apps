@@ -1,0 +1,20 @@
+apiVersion: fluxcd.io/v1
+kind: Application
+metadata:
+  name: app-of-apps-monitoring
+  namespace: flux-system
+spec:
+  source:
+    git:
+      url: git@github.com:roxas9730/apps.git
+      ref:
+        branch: main
+      path: apps/monitoring
+  destination:
+    namespace: flux-system
+    server: https://kubernetes.default.svc
+  helm:
+    values: |
+      global:
+        image:
+          tag: "latest"

@@ -1,0 +1,22 @@
+oapiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  chart:
+    spec:
+      chart: grafana
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+      version: "6.16.0"  # Versión del chart de Grafana
+  values:
+    adminPassword: "admin"
+    ingress:
+      enabled: true
+      hosts:
+        - grafana.mi-dominio.com
+    persistence:
+      enabled: true
+      size: 10Gi
